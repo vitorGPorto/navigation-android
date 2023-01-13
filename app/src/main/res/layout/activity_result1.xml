@@ -5,32 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
-    tools:context=".ResultadoActivity">
+    tools:context=".ResultActivity1">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/design_default_color_primary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:contentInsetStart="0dp"
-        app:contentInsetStartWithNavigation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:logo="@drawable/ic_logo"
-        app:menu="@menu/second_screen_menu"
-        app:title="@string/nome_app"
-        app:titleMargin="6dp"
-        app:titleMarginBottom="4dp"
-        app:titleMarginStart="8dp" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_primary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:contentInsetStart="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/second_screen_menu"
+            app:title="@string/nome_app"
+            app:titleMargin="6dp"
+            app:titleMarginBottom="4dp"
+            app:titleMarginStart="8dp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView"
+            android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,31 +41,31 @@
             app:menu="@menu/bottom_nav_menu" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="156dp"
-            android:text="@string/resultado_page"
-            android:textSize="48sp"
+            android:layout_marginBottom="332dp"
+            android:text="@string/Jogador_ganhador"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNav"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Jogador_ganhador"
+            android:layout_marginBottom="96dp"
+            android:text="@string/bottom_nav_title_2"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
         android:layout_width="match_parent"
@@ -73,4 +74,5 @@
         app:headerLayout="@layout/menu_header"
         app:menu="@menu/drawer_menu"
         tools:visibility="visible" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

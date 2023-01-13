@@ -7,46 +7,52 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.example.jokenpo.databinding.ActivityResultadoBinding
+import com.example.jokenpo.databinding.ActivityMain2Binding
+import com.example.jokenpo.databinding.ActivityResult1Binding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 
-class ResultadoActivity : AppCompatActivity() {
+class ResultActivity1 : AppCompatActivity() {
     lateinit var drawer: DrawerLayout // caso der  errado verificar aqui.
     lateinit var navDrawer : NavigationView
     lateinit var bottomNav : BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_result1)
 
-        setContentView(R.layout.activity_resultado)
 
-        val binding = ActivityResultadoBinding.inflate(layoutInflater)
+        val binding = ActivityResult1Binding.inflate(
+            layoutInflater
+        )
+
 
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar3)
 
-        drawer = binding.root
+        drawer =  binding.root
         navDrawer = binding.navView
-        bottomNav = binding.bottomNavigationView
+        bottomNav = binding.bottomNav
 
-       setupToolbar()
-       setDrawer()
-      setButtomNavigation()
+        setupToolbar()
+        setDrawer()
+       setButtomNavigation()
     }
     private fun setButtomNavigation(){
+
         bottomNav.setOnItemSelectedListener {
                 menuItem ->
             when(menuItem.itemId){
                 R.id.bottom_option_1 ->{
-                    Snackbar.make(drawer,getString(R.string.bottom_nav_title_1), Snackbar.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity2::class.java)
+                    startActivity(intent)
+                    finish()
                     true
+
                 }
                 R.id.bottom_option_2 -> {
-                   Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
-                    val resultadoActivityIntent = Intent(this, ResultadoActivity::class.java)
-                    startActivity(resultadoActivityIntent)
+                    Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
                     true
                 }
                 else -> false
@@ -54,6 +60,7 @@ class ResultadoActivity : AppCompatActivity() {
 
         }
     }
+
     private fun setDrawer(){
 
         navDrawer.setNavigationItemSelectedListener {
@@ -64,17 +71,27 @@ class ResultadoActivity : AppCompatActivity() {
                     onBackPressed()
                     true
                 }
+                R.id.drawer_conta ->{
+                    Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                    true
+                }
                 else -> false
             }
 
         }
 
+
     }
+
     private fun setupToolbar(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
 
     }
+
     override fun onSupportNavigateUp(): Boolean {
         drawer.openDrawer(GravityCompat.START)
         return true

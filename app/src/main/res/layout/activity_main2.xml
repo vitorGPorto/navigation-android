@@ -12,7 +12,6 @@
         android:layout_height="wrap_content">
 
 
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar2"
             android:layout_width="0dp"
@@ -25,7 +24,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:logo="@drawable/ic_logo"
             app:menu="@menu/second_screen_menu"
             app:title="@string/nome_app"
             app:titleMargin="6dp"

@@ -45,12 +45,14 @@ class MainActivity2 : AppCompatActivity() {
                 menuItem ->
                 when(menuItem.itemId){
                     R.id.bottom_option_1 ->{
+
                         Snackbar.make(drawer,getString(R.string.bottom_nav_title_1), Snackbar.LENGTH_SHORT).show()
                         true
                     }
                     R.id.bottom_option_2 -> {
-                       // Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
-                        carregarResult(ResultadoActivity::class.java)
+                      //Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
+                        val intent = Intent(this, ResultActivity1::class.java)
+                        startActivity(intent)
                         true
                     }
                     else -> false
@@ -58,6 +60,7 @@ class MainActivity2 : AppCompatActivity() {
 
             }
         }
+
         private fun setDrawer(){
 
             navDrawer.setNavigationItemSelectedListener {
@@ -69,8 +72,10 @@ class MainActivity2 : AppCompatActivity() {
                         true
                     }
                     R.id.drawer_conta ->{
-                        val resultadoActivityIntent = Intent(this, ResultadoActivity::class.java)
-                        startActivity(resultadoActivityIntent)
+                        Snackbar.make(drawer,getString(R.string.bottom_nav_title_2), Snackbar.LENGTH_SHORT).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+
                         true
                     }
                     else -> false
@@ -79,9 +84,10 @@ class MainActivity2 : AppCompatActivity() {
             }
 
         }
-    private  fun carregarResult (activity: Class <ResultadoActivity>){
-        val resultadoActivityIntent = Intent(this, activity)
-        startActivity(resultadoActivityIntent)
+    private  fun carregarResult (){
+        val intent = Intent(this, ResultActivity1::class.java)
+        startActivity(intent)
+        finish()
     }
     private fun setupToolbar(){
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
