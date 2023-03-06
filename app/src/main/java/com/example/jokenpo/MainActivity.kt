@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_main)
-
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfigurantion)
 
         navDrawer.setupWithNavController(navController)
-//finalizar aqui
+        //finalizar aqui
         setButtomNavigation()
     }
 
@@ -70,30 +68,4 @@ class MainActivity : AppCompatActivity() {
         drawer.openDrawer(GravityCompat.START)
         return true
     }
-
-    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-
-        menuInflater.inflate(R.menu.second_screen_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.menu_save ->{
-                Snackbar.make(this,
-                    drawer,
-                    getString( R.string.menu_save_title),
-                    Snackbar.LENGTH_SHORT).show()
-                true
-            }
-            R.id.menu_setting -> {
-                Snackbar.make(this,
-                    drawer,
-                    getString(R.string.menu_settings_title),
-                    Snackbar.LENGTH_SHORT).show()
-                true
-            }
-            else -> false
-        }
-    }*/
 }
