@@ -3,9 +3,7 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-        android:title="@string/bottom_nav_title_1"
+        android:title="@string/drawer_home_title"
         />
-    <item android:id="@+id/resultFragment"
-        android:icon="@drawable/ic_account"
-        android:title="@string/bottom_nav_title_2"/>
+
 </menu>
